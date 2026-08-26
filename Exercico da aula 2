@@ -1,0 +1,41 @@
+//Exercico da aula 2
+
+//Variaveis
+var nome = texto
+var ano_nascimento = inteiro
+var salario = real
+
+
+escreva ("nome: ${nome}")
+var nome = "Vinicius"
+
+escreva ("ano nascimento: ${ano_nascimento}")
+var ano_nascimento = "2006"
+
+escreva ("salario: ${salario}")
+var salario = "1500"
+
+
+//Entrada de dados
+nome = leia ("Por favor, digite o seu nome:")
+ano_nascimento = leia ("Por favor, digite o seu ano de nascimento:")
+salario = leia ("Por favor, digite o seu salario:")
+
+//Variavel usa_oculos
+var usa_oculos: lógico = falso
+var resposta: texto
+
+resposta = leia ("Voce usa oculos? Responda com V ou F")
+
+se (resposta=='V'){
+usa_oculos=verdadeiro
+}
+
+se (usa_oculos) {
+    escreva('OK, voce usa oculos!');
+} senao {
+    escreva('Que pena" Voce nao usa oculos!');
+}
+
+//AVISO! Professor, este exercicio não ficou pronto na aula, vou refaze-lo em casa para encontrar os erros e termina-lo. Obrigado :)
+
