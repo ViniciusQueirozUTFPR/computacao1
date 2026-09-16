@@ -1,0 +1,39 @@
+//Declarando variaveis
+var nome = texto
+var media = real
+var soma_medias = 0
+
+//Declarando quantidade de alunos
+var quantidade_alunos = 0
+enquanto (quantidade_alunos <= 1) {
+    quantidade_alunos = inteiro(leia("Digite a quantidade de alunos:"))
+}
+
+//Recebendo dados dos alunos
+para (var i = 0; i < quantidade_alunos; i = i + 1) {
+    escreva("Aluno " + (i + 1))
+    
+    //Entrada de dados
+    var nome = leia("Digite o nome do aluno(a): ")
+    var nota1 = real(leia("Digite a primeira nota: "))
+    var nota2 = real(leia("Digite a segunda nota: "))
+    
+    //Calcula a média
+    var media_aluno = (nota1 + nota2) / 2
+    
+    
+    // Soma a média para usar no cálculo da turma depois
+    soma_medias = soma_medias + media_aluno
+}
+
+//Média da turma
+var media_turma = soma_medias / quantidade_alunos
+
+//90% dessa média
+var nota_corte = media_turma * 0.90
+
+escreva("Média geral da turma: " + media_turma)
+escreva("90% da média da turma: " + nota_corte)
+
+//Obs:Professor, eu nao consegui fazer a parte que escreve sobre o aluno que ficou com nota superior a 90%, estava acusando erros
+
