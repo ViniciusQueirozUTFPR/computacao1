@@ -1,0 +1,49 @@
+//Questão: Processamento de Arquivos Texto em C
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    FILE *arq;
+    char palavra[50];
+    char letra;
+    int cont = 0;
+
+    arq = fopen("palavras.txt", "w");
+    if (arq == NULL) {
+        printf("Erro ao abrir o arquivo\n");
+        return 1;
+    }
+
+    printf("Digite uma palavra (ou 'fim' para encerrar): ");
+    scanf("%s", palavra);
+
+    while (strcmp(palavra, "fim") != 0) {
+        fprintf(arq, "%s\n", palavra);
+        printf("Digite uma palavra (ou 'fim' para encerrar): ");
+        scanf("%s", palavra);
+    }
+
+    fclose(arq);
+
+    printf("\nDigite a letra para contar as palavras que comecam com ela: ");
+    scanf(" %c", &letra);
+
+    arq = fopen("palavras.txt", "r");
+    if (arq == NULL) {
+        printf("Erro ao abrir o arquivo\n");
+        return 1;
+    }
+
+    while (fscanf(arq, "%s", palavra) == 1) {
+        if (palavra[0] == letra) {
+            cont++;
+        }
+    }
+
+    fclose(arq);
+
+    printf("Numero de palavras que comecam com '%c': %d\n", letra, cont);
+
+    return 0;
+}
